@@ -18,7 +18,7 @@ In some cases, `UITableView` delivers the `tableView:didSelectRowAtIndexPath:` d
     }
 }
 ```
-3. Simultaneously try writing something in the search bar at the top, and tapping on a table cell. Try this again, until the debugger stops at the breakpoint. 
+3. Simultaneously try writing something in the search bar at the top, and tapping on a table cell. Try this again, until the debugger stops at the breakpoint. (see the attached gif above)
 
 The app is written in a way that whenever the search field is non-empty, the table view should be empty. This is achieved by synchronously calling `reloadData` on the table view from the `UISearchController`'s `updateSearchResultsForSearchController:` callback. It should be impossible to enter `tableView:didSelectRowAtIndexPath:` when the search field is non-empty, yet it happens eventually if one tries to simultaneously type into the text field and tap on a table cell. 
 
